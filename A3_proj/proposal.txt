@@ -1,11 +1,13 @@
+# Solo_Project_A3
+
 Michelle Barker - Solo Project Proposal
 
 E-Commerce Website: Artists for Autistic Adults (A3)
 
 Concept:
-The idea is to create a website where the artwork of autistic people and others committed to the Adult Autistic community can sell their artwork and other creative endeavors. This could also have a side component of being a public awareness campaign about the challenges and joys of being an autistic adult.
+The idea is to create a website where autistic people and others committed to the Adult Autistic community can sell their artwork and other creative endeavors. This could also have a side component of being a public awareness campaign about the challenges and joys of being an autistic adult.
 
-A percentage of the profit would be donated to local foundations and community organizations that support Autistic Adults. Once autistic individuals graduate from high school, there are very few supports available to them. Those public supports that exist are extremely difficult to navigate.
+A percentage of the profit would be donated to local foundations and community organizations that support Autistic Adults. Once autistic individuals graduate from high school, there are very few supports available to them. The public supports that exist are extremely difficult to navigate.
 
 Extensions of this website (not included in project) could be to have Athletes and Actors donate signed memorabilia to auction or sell for fundraising; to create an A3 Foundation (non-profit) that could manage funds directly to contribute nationally to programs that support Autistic Adults; link for people who want to make a straight donation; separate categories for products created by autistic individuals and products created by parents of autistic individuals.
 
@@ -24,7 +26,7 @@ An e-commerce website that has:
 
 5) Show all orders Dashboard.(show_all.html) in a table with headings Order ID, Cust.Name, Billing Address, Total, Status (Dropdown - Shipped, In process, Cancelled). Navbar for Orders, Products, Log Out across this admin only interface.
 
-6) Show one order page by ID, with customer shipping and billing info, and a table that shows products ordered by ID, Item, Price, Quantity, Total. Status to display. SubTotal:, Tax:, Shipping: and Total Price to display.
+6) Show one order page (one_order.html) by ID, with customer shipping and billing info, and a table that shows products ordered by ID, Item, Price, Quantity, Total. Status to display. SubTotal:, Tax:, Shipping: and Total Price to display.
 
 7) Show all products Dashboard. (all_products.html) Page shows a table of all existing products with image, ID, Item Name, Category, Inventory Count, Quantity Sold, Action (Edit -redirects to edit.html, Delete - redirects to products Dashboard). "Add New Product" Button that takes admin to New Product page (new_product.html).
 
