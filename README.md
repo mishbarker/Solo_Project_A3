@@ -37,18 +37,16 @@ An e-commerce website that has:
 
 Product Backlog (cool, but not crucial):
 
-Numbering coincides with above list.
+1) Home page has a list of categories of products. After clicking on a category the home page displays products from that category (AJAX - I think).
 
-1. a) Home page has a list of categories of products. After clicking on a category the home page displays products from that category (AJAX - I think).
+2) In nav bar, there are options for About, Artists (shows bios and their art products on a new page), Contact.
 
-1. b) In nav bar, there are options for About, Artists (shows bios and their art products on a new page), Contact.
+3) Have customers Register and LogIn with validation for adding reviews and tracking their orders.
 
-1. c) Have customers Register and LogIn with validation for adding reviews and tracking their orders.
+4) Have a search function for the main shopping site.
 
-1. d) Have a search function for the site.
+5) Reviews would show on the show_one product page on main site. From there users could also add a review.
 
-2. Reviews would show on the show_one product page. From there users could also add a review.
+6) All pages would have a search function for administrative site.
 
-6. - 10. All pages would have a search function for administrative site.
-
-8. In admin show all products, click on item name and in a new tab, admin sees show_one.html on the main site.
+7) In admin show all products, click on item name and in a new tab, admin sees show_one.html on the main site.
