@@ -39,7 +39,7 @@ Product Backlog (cool, but not crucial):
 
 Numbering coincides with above list.
 
-1.a) Home page has a list of categories of products. After clicking on a category the home page displays products from that category (AJAX - I think).
+1. a) Home page has a list of categories of products. After clicking on a category the home page displays products from that category (AJAX - I think).
 
 1. b) In nav bar, there are options for About, Artists (shows bios and their art products on a new page), Contact.
 
