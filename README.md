@@ -43,9 +43,6 @@ Numbering coincides with above list.
 1.b) In nav bar, there are options for About, Artists (shows bios and their art products on a new page), Contact.
 1.c) Have customers Register and LogIn with validation for adding reviews and tracking their orders.
 1.d) Have a search function for the site.
-
 2) Reviews would show on the show_one product page. From there users could also add a review.
-
 6) - 10) All pages would have a search function for administrative site.
-
 8) In admin show all products, click on item name and in a new tab, admin sees show_one.html on the main site.
