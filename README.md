@@ -18,9 +18,9 @@ An e-commerce website that has:
 
 2) Customer clicks on a product and goes to a show_one page for that product, description, image, price. (show_one.html)
 
-3.a) Customer adds item to shopping cart and is redirected to the checkout page with the option to continue shopping. (shop_cart.html or redirect to home.)
+3. a) Customer adds item to shopping cart and is redirected to the checkout page with the option to continue shopping. (shop_cart.html or redirect to home.)
 
-3.b) At shopping cart, items purchased are listed, with a total, added tax and shipping charge. Customer inputs shipping and billing info, along with stripe.api credit card information. Clicking on PAY button gives them a success message (would like to do with AJAX - message appears and fades out).
+3. b) At shopping cart, items purchased are listed, with a total, added tax and shipping charge. Customer inputs shipping and billing info, along with stripe.api credit card information. Clicking on PAY button gives them a success message (would like to do with AJAX - message appears and fades out).
 
 4) Django Admin! New! Set up Django Admin for administrative users with email and password (with validation and bcrypt). (admin.html)
 
@@ -40,9 +40,15 @@ Product Backlog (cool, but not crucial):
 Numbering coincides with above list.
 
 1.a) Home page has a list of categories of products. After clicking on a category the home page displays products from that category (AJAX - I think).
-1.b) In nav bar, there are options for About, Artists (shows bios and their art products on a new page), Contact.
-1.c) Have customers Register and LogIn with validation for adding reviews and tracking their orders.
-1.d) Have a search function for the site.
+
+1. b) In nav bar, there are options for About, Artists (shows bios and their art products on a new page), Contact.
+
+1. c) Have customers Register and LogIn with validation for adding reviews and tracking their orders.
+
+1. d) Have a search function for the site.
+
 2) Reviews would show on the show_one product page. From there users could also add a review.
+
 6) - 10) All pages would have a search function for administrative site.
+
 8) In admin show all products, click on item name and in a new tab, admin sees show_one.html on the main site.
