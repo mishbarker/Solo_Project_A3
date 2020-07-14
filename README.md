@@ -1,4 +1,4 @@
-# Solo_Project_A3
+# Solo Project: Artist for Autistic Adults (A3)
 
 Michelle Barker - Solo Project Proposal
 
