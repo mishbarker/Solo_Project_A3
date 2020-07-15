@@ -1,0 +1,52 @@
+# Solo Project: Artist for Autistic Adults (A3)
+
+Michelle Barker - Solo Project Proposal
+
+E-Commerce Website: Artists for Autistic Adults (A3)
+
+Concept:
+The idea is to create a website where autistic people and others committed to the Adult Autistic community can sell their artwork and other creative endeavors. This could also have a side component of being a public awareness campaign about the challenges and joys of being an autistic adult.
+
+A percentage of the profit would be donated to local foundations and community organizations that support Autistic Adults. Once autistic individuals graduate from high school, there are very few supports available to them. The public supports that exist are extremely difficult to navigate.
+
+Extensions of this website (not included in project) could be to have Athletes and Actors donate signed memorabilia to auction or sell for fundraising; to create an A3 Foundation (non-profit) that could manage funds directly to contribute nationally to programs that support Autistic Adults; link for people who want to make a straight donation; separate categories for products created by autistic individuals and products created by parents of autistic individuals.
+
+Minimum Viable Product:
+An e-commerce website that has:
+
+1) Home page showcasing the A3 store and products with images. (index.html) Home page has nav bar and shopping cart.
+
+2) Customer clicks on a product and goes to a show_one page for that product, description, image, price. (show_one.html)
+
+3. a) Customer adds item to shopping cart and is redirected to the checkout page with the option to continue shopping. (shop_cart.html or redirect to home.)
+
+3. b) At shopping cart, items purchased are listed, with a total, added tax and shipping charge. Customer inputs shipping and billing info, along with stripe.api credit card information. Clicking on PAY button gives them a success message (would like to do with AJAX - message appears and fades out).
+
+4) Django Admin! New! Set up Django Admin for administrative users with email and password (with validation and bcrypt). (admin.html)
+
+5) Show all orders Dashboard.(show_all.html) in a table with headings Order ID, Cust.Name, Billing Address, Total, Status (Dropdown - Shipped, In process, Cancelled). Navbar for Orders, Products, Log Out across this admin only interface.
+
+6) Show one order page (one_order.html) by ID, with customer shipping and billing info, and a table that shows products ordered by ID, Item, Price, Quantity, Total. Status to display. SubTotal:, Tax:, Shipping: and Total Price to display.
+
+7) Show all products Dashboard. (all_products.html) Page shows a table of all existing products with image, ID, Item Name, Category, Inventory Count, Quantity Sold, Action (Edit -redirects to edit.html, Delete - redirects to products Dashboard). "Add New Product" Button that takes admin to New Product page (new_product.html).
+
+8) New product page (new_product.html) allows admin to enter Item Name, Description, Categories from drop down (or add category), upload image (no idea how to do that), and submit. Redirects back to all_products.html.
+
+9) Edit product page (edit.html) displays information of product in editable form. Admin can also edit/upload image here. After submit redirects to all_products.html).
+
+
+Product Backlog (cool, but not crucial):
+
+1) Home page has a list of categories of products. After clicking on a category the home page displays products from that category (AJAX - I think).
+
+2) In nav bar, there are options for About, Artists (shows bios and their art products on a new page), Contact.
+
+3) Have customers Register and LogIn with validation for adding reviews and tracking their orders.
+
+4) Have a search function for the main shopping site.
+
+5) Reviews would show on the show_one product page on main site. From there users could also add a review.
+
+6) All pages would have a search function for administrative site.
+
+7) In admin show all products, click on item name and in a new tab, admin sees show_one.html on the main site.
