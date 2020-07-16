@@ -32,8 +32,8 @@ ALLOWED_HOSTS = []
 
 INSTALLED_APPS = [
     'apps.app1',
-    'apps.app2',
-    'shop_cart.app',
+    # 'apps.app2',
+    # 'apps.shop_cart_app',
 
     'django.contrib.admin',
     'django.contrib.auth',
@@ -122,3 +122,7 @@ USE_TZ = True
 # https://docs.djangoproject.com/en/2.2/howto/static-files/
 
 STATIC_URL = '/static/'
+
+STATICFILES_DIRS = [
+    os.path.join(BASE_DIR, 'static')
+]
