@@ -10,59 +10,77 @@
   <meta name="description" content="">
   <meta name="author" content="">
 
-  <title>Artists for Autism - A3 - Shopping</title>
+  <title>Artists for Autism - A3 - Shopping Cart</title>
 
-  <!-- Bootstrap core CSS -->
-  <link href="{% static 'vendor/bootstrap/css/bootstrap.min.css' %}" rel="stylesheet">
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
 
-  <!-- Custom styles for this template -->
-  <link href="{% static 'css/shop-homepage.css' %}" rel="stylesheet">
+	<link rel="stylesheet" type="text/css" href="{% static 'css/main.css' %}">
 
 </head>
 
 <body>
 
-  <!-- Navigation -->
-  <nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top">
-    <div class="container">
-      <a class="navbar-brand" href="#">Discover unique products. Support the Adult Autistic Community. Only on (A3).</a>
-      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
-        <span class="navbar-toggler-icon"></span>
-      </button>
-      <div class="collapse navbar-collapse" id="navbarResponsive">
-        <ul class="navbar-nav ml-auto">
-          <li class="nav-item active">
-            <a class="nav-link" href="#">Home
-              <span class="sr-only">(current)</span>
-            </a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" href="#">About</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" href="#">Artists</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" href="#">Contact</a>
-          </li>
-        </ul>
+  <!-- Page Content -->
+
+  {% block content %}
+    <div class="row">
+      <div class="col-lg-12">
+        <h3 class="my-4" href="{% url 'store' %}">Artists for Autistic Adults (A3)</h3>
+        <div class="box-element">
+
+          <a  class="btn btn-outline-dark" href="{% url 'store' %}">&#x2190; Continue Shopping</a>
+
+          <br>
+          <br>
+          <table class="table">
+            <tr>
+              <th><h5>Items: <strong>3</strong></h5></th>
+              <th><h5>Total:<strong>$47</strong></h5></th>
+              <th>
+                <a  style="float:right; margin:5px;" class="btn btn-success" href="{% url 'checkout' %}">Checkout</a>
+              </th>
+            </tr>
+          </table>
+        </div>
+
+        <br>
+        <div class="box-element">
+          <div class="cart-row">
+            <div style="flex:2"></div>
+            <div style="flex:2"><strong>Item</strong></div>
+            <div style="flex:1"><strong>Price</strong></div>
+            <div style="flex:1"><strong>Quantity</strong></div>
+            <div style="flex:1"><strong>Total</strong></div>
+          </div>
+          
+          <div class="cart-row">
+            <div style="flex:2"><img class="row-image" src="{% static 'images/placeholder.png' %}"></div>
+              <div style="flex:2"><p>Product 1</p></div>
+              <div style="flex:1"><p>$20</p></div>
+              <div style="flex:1">
+                <p class="quantity">2</p>
+                <div class="quantity">
+                  <img class="chg-quantity update-cart" src="{% static 'images/arrow-up.png' %}">
+              
+                  <img class="chg-quantity update-cart" src="{% static 'images/arrow-down.png' %}">
+                </div>
+              </div>
+            <div style="flex:1"><p>$40</p></div>
+          </div>
+         
+        </div>
+        <br>
+        <h3>The Neurodiverse Community Thanks You!</h3>
+        <h5>Each artist has committed to donating at least 10% of proceeds to a cause that supports Autistic Adults.</h5>
+        <br>
       </div>
     </div>
-  </nav>
+  {% endblock content %}
 
-  <!-- Page Content -->
-  <!-- <div class="container-fluid bg-info">
-    <div class="wrapper container"> -->
-      {% block content %}
-        <h1>Shopping Cart</h1>
-      {% endblock content %}
-    <!-- </div>
-    <!-- / .wrapper -->
-
-  <!-- </div> --> -->
-  <!-- /.container -->
-    <!-- </div>
-  </div> -->
+   <!-- Bootstrap core JavaScript -->
+   <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+   <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
+   <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js" integrity="sha384-OgVRvuATP1z7JjHLkuOU7Xw704+h835Lr+6QL9UvYjZE3Ipu6Tp75j7Bh/kR0JKI" crossorigin="anonymous"></script>
   
 </body>
 </html>
