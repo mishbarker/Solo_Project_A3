@@ -1,5 +1,6 @@
 from django.db import models
 from django.contrib.auth.models import User
+from PIL import Image
 
 # Create your models here.
 class Customer(models.Model):
@@ -17,7 +18,7 @@ class Product(models.Model):
     name = models.CharField(max_length=155, null=True)
     price = models.FloatField()
     digital = models.BooleanField(default=False, null=True, blank=False)
-    image = models.ImageField(null=True, blank=True)
+    image = models.ImageField(upload_to= "", null=True, blank=True)
     created_by = models.DateTimeField(auto_now_add=True)
     updated_by = models.DateTimeField(auto_now=True)
 
