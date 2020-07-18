@@ -34,8 +34,8 @@
           <br>
           <table class="table">
             <tr>
-              <th><h5>Items: <strong>3</strong></h5></th>
-              <th><h5>Total:<strong>$47</strong></h5></th>
+              <th><h5>Items: <strong>{{order.get_cart_items}}</strong></h5></th>
+              <th><h5>Total:<strong>${{order.get_cart_total|floatformat:2}}</strong></h5></th>
               <th>
                 <a  style="float:right; margin:5px;" class="btn btn-success" href="{% url 'checkout' %}">Checkout</a>
               </th>
@@ -52,22 +52,22 @@
             <div style="flex:1"><strong>Quantity</strong></div>
             <div style="flex:1"><strong>Total</strong></div>
           </div>
-          
+          {% for item in items %}
           <div class="cart-row">
-            <div style="flex:2"><img class="row-image" src="{% static 'images/placeholder.png' %}"></div>
-              <div style="flex:2"><p>Product 1</p></div>
-              <div style="flex:1"><p>$20</p></div>
+            <div style="flex:2"><img class="row-image" src="{{item.product.imageURL}}"></div>
+              <div style="flex:2"><p>{{item.product.name}}</p></div>
+              <div style="flex:1"><p>{{item.product.price|floatformat:2}}</p></div>
               <div style="flex:1">
-                <p class="quantity">2</p>
+                <p class="quantity">{{item.quantity}}</p>
                 <div class="quantity">
                   <img class="chg-quantity update-cart" src="{% static 'images/arrow-up.png' %}">
               
                   <img class="chg-quantity update-cart" src="{% static 'images/arrow-down.png' %}">
                 </div>
               </div>
-            <div style="flex:1"><p>$40</p></div>
+            <div style="flex:1"><p>${{item.get_total|floatformat:2}}</p></div>
           </div>
-         
+          {% endfor %}
         </div>
         <br>
         <h3>The Neurodiverse Community Thanks You!</h3>
@@ -79,7 +79,9 @@
 
    <!-- Bootstrap core JavaScript -->
    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+
    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
+   
    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js" integrity="sha384-OgVRvuATP1z7JjHLkuOU7Xw704+h835Lr+6QL9UvYjZE3Ipu6Tp75j7Bh/kR0JKI" crossorigin="anonymous"></script>
   
 </body>
