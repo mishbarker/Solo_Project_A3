@@ -4,23 +4,23 @@ from PIL import Image
 
 # Create your models here.
 class Customer(models.Model):
-    user = models.OneToOneField(User, on_delete=models.CASCADE, null=True, blank=True)
+    user = models.OneToOneField(User, null=True, blank=True, on_delete=models.CASCADE)
     name = models.CharField(max_length=155, null=True)
-    email = models.CharField(max_length=155, null=True)
-    phone = models.CharField(max_length=20, null=True)
-    created_by = models.DateTimeField(auto_now_add=True)
-    updated_by = models.DateTimeField(auto_now=True)
+    email = models.EmailField(max_length=155, null=True)
+    created_at = models.DateTimeField(auto_now_add=True)
+    updated_at = models.DateTimeField(auto_now=True)
 
     def __str__(self):
         return self.name
 
 class Product(models.Model):
     name = models.CharField(max_length=155, null=True)
-    price = models.FloatField()
+    price = models.DecimalField(max_digits=7, decimal_places = 2)
     digital = models.BooleanField(default=False, null=True, blank=False)
     image = models.ImageField(upload_to= "", null=True, blank=True)
-    created_by = models.DateTimeField(auto_now_add=True)
-    updated_by = models.DateTimeField(auto_now=True)
+    description = models.TextField(null=True)
+    created_at = models.DateTimeField(auto_now_add=True)
+    updated_at = models.DateTimeField(auto_now=True)
 
     def __str__(self):
             return self.name
@@ -38,11 +38,21 @@ class Order(models.Model):
     date_ordered = models.DateTimeField(auto_now_add=True)
     complete = models.BooleanField(default=False, null=True, blank=False)
     transaction_id = models.CharField(max_length=100, null=True)
-    created_by = models.DateTimeField(auto_now_add=True)
-    updated_by = models.DateTimeField(auto_now=True)
+    created_at = models.DateTimeField(auto_now_add=True)
+    updated_at = models.DateTimeField(auto_now=True)
 
     def __str__(self):
         return str(self.id)
+
+    @property
+    def shipping(self):
+        shipping = False
+        orderitems = self.orderitem_set.all()
+        for i in orderitems:
+            if i.product.digital == False:
+                shipping = True
+        return shipping
+    
 
     @property
     def get_cart_total(self):
@@ -61,8 +71,8 @@ class OrderItem(models.Model):
     order = models.ForeignKey(Order, on_delete=models.SET_NULL, null=True, blank=True)
     quantity = models.IntegerField(default=0, null=True, blank=True)
     date_added = models.DateTimeField(auto_now_add=True)
-    created_by = models.DateTimeField(auto_now_add=True)
-    updated_by = models.DateTimeField(auto_now=True)
+    created_at = models.DateTimeField(auto_now_add=True)
+    updated_at = models.DateTimeField(auto_now=True)
 
     @property
     def get_total(self):
@@ -73,14 +83,14 @@ class ShippingAddress(models.Model):
     customer = models.ForeignKey(Customer, on_delete=models.SET_NULL, null=True, blank=True)
     order = models.ForeignKey(Order, on_delete=models.SET_NULL, null=True, blank=True)
     address = models.CharField(max_length=155, null=True)
-    address1 = models.CharField(max_length=155, null=True)
+    address2 = models.CharField(max_length=155, null=True)
     city = models.CharField(max_length=155, null=True)
     state = models.CharField(max_length=155, null=True)
     zipcode = models.CharField(max_length=155, null=True)
     country = models.CharField(max_length=155, null=True)
     date_added = models.DateTimeField(auto_now_add=True)
-    created_by = models.DateTimeField(auto_now_add=True)
-    updated_by = models.DateTimeField(auto_now=True)
+    created_at = models.DateTimeField(auto_now_add=True)
+    updated_at = models.DateTimeField(auto_now=True)
 
     def __str__(self):
         return self.address

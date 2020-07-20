@@ -1,9 +1,9 @@
-<!DOCTYPE html>
-<html lang="en">
+<!-- <!DOCTYPE html>
+<html lang="en"> -->
 {% extends 'main.html' %}
 {% load static %}
 
-<head>
+<!-- <head>
 
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -18,7 +18,7 @@
 
 </head>
 
-<body>
+<body> -->
 
   <!-- Page Content -->
 
@@ -60,9 +60,9 @@
               <div style="flex:1">
                 <p class="quantity">{{item.quantity}}</p>
                 <div class="quantity">
-                  <img class="chg-quantity update-cart" src="{% static 'images/arrow-up.png' %}">
+                  <img data-product="{{item.product.id}}" data-action="add" class="chg-quantity update-cart" src="{% static 'images/arrow-up.png' %}">
               
-                  <img class="chg-quantity update-cart" src="{% static 'images/arrow-down.png' %}">
+                  <img data-product="{{item.product.id}}" data-action="remove" class="chg-quantity update-cart" src="{% static 'images/arrow-down.png' %}">
                 </div>
               </div>
             <div style="flex:1"><p>${{item.get_total|floatformat:2}}</p></div>
@@ -77,7 +77,7 @@
     </div>
   {% endblock content %}
 
-   <!-- Bootstrap core JavaScript -->
+   Bootstrap core JavaScript
    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
 
    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>

@@ -3,13 +3,14 @@ from .import views
 
 urlpatterns = [
 
-    path('', views.index, name="store"), #GET renders home.html for shopping homepage
+    path('', views.index, name="store"), #GET renders index.html for shopping homepage
     path('show_one/', views.show_one, name="show_one"), #will need <int:id> added back in
     path('shop_cart/', views.shop_cart, name="shop_cart"), #will need <int:id> added back in
-    path('checkout/', views.checkout, name="checkout")
+    path('checkout/', views.checkout, name="checkout"),
 
-    # path('submit_review/<int:id>', views.submit_review), #POST that redirects to /show_one_book/<int:id>
-    # path('delete_review/<int:id>', views.delete_review), #POST/GET redirects to same page /show_one_book/<int:id>
-    # path('user_profile/<int:id>', views.user_profile), #renders profile.html with redirects to /show_one_book/<int:id> OR HOME OR /new OR /logout
+    path('update_item/', views.updateItem, name="update_item"),
+    path('process_order/', views.processOrder, name="process_order"),
+
+    
     
 ]

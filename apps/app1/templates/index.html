@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 {% extends 'main.html' %}
 {% load static %}
 
@@ -71,17 +72,24 @@
             {% for product in products %}
             <div class="col-lg-4 col-md-6 mb-4">
               <div class="card h-100">
-                <a href="#"><img class="card-img-top" src="{{product.imageURL}}" alt=""></a>
+                <a href=""><img class="card-img-top" src="{{product.imageURL}}" alt=""></a>
                 <div class="card-body">
-                  <h4 class="card-title">
+                  <h5 class="card-title">
                     <a href="#">{{product.name}}</a>
-                  </h4>
+                  </h5>
                   <h5>${{product.price|floatformat:2}}</h5>
-                  <p class="card-text">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Amet numquam aspernatur!</p>
+                  <p class="card-text">{{product.description}}</p>
                 </div>
-                <div class="card-footer">
-                  <small class="text-muted">&#9733; &#9733; &#9733; &#9733; &#9734;</small>
-                </div>
+    
+                <button data-product="{{product.id}}" data-action="add" class="btn btn-warning add-btn update-cart">Add to Cart</button>
+
+                
+                <a class="btn btn-success mt-2" href="{{show_one}}">View Art</a>
+                
+                  
+                
+				        
+                
               </div>
             </div>
             {% endfor %}
@@ -113,6 +121,8 @@
   <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
   
   <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js" integrity="sha384-OgVRvuATP1z7JjHLkuOU7Xw704+h835Lr+6QL9UvYjZE3Ipu6Tp75j7Bh/kR0JKI" crossorigin="anonymous"></script>
+
+  <script type="text/javascript" src="{% static 'js/shop_cart.js' %}"></script>
 
 </body>
 
