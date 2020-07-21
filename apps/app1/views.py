@@ -8,7 +8,6 @@ from . utils import cookieCart, cartData, guestOrder
 
 # Create your views here.
 def index(request):
-
     data = cartData(request)
     cartItems = data['cartItems']
 
@@ -16,17 +15,16 @@ def index(request):
     context = {"products": products, 'cartItems':cartItems}
     return render(request, "index.html", context)
 
-def show_one(request):
+def show_one(request, id):
     data = cartData(request)
     cartItems = data['cartItems']
-    order = data['order']
     items = data['items']
 
+    products = Product.objects.get(id=id)
     context = {
-        'items':items,
-        'order':order,
-        'cartItems':cartItems,
-    }
+        'products': products, 
+        'cartItems':cartItems, 
+        'items': items}
     return render(request, "show_one.html", context)
 
 def shop_cart(request):
@@ -88,6 +86,7 @@ def processOrder(request):
     if request.user.is_authenticated:
         customer = request.user.customer
         order, created = Order.objects.get_or_create(customer=customer, complete=False)
+
         
     else:
         customer, order = guestOrder(request, data)
@@ -112,3 +111,5 @@ def processOrder(request):
         )
 
     return JsonResponse('Payment complete!', safe=False)
+
+

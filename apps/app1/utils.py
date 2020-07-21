@@ -14,6 +14,7 @@ def cookieCart(request):
     cartItems = order['get_cart_items']
 
     for i in cart:
+        #We use try block to prevent items in cart that may have been removed from causing error
         try:
             cartItems += cart[i]["quantity"]
 
@@ -24,6 +25,7 @@ def cookieCart(request):
             order['get_cart_items'] += cart[i]["quantity"]
 
             item = {
+                'id':product.id,
                 'product': {
                     'id':product.id,
                     'name':product.name,
@@ -31,8 +33,9 @@ def cookieCart(request):
                     'imageURL':product.imageURL,
                 },
                 'quantity':cart[i]["quantity"],
-                'get_total':total
-                }
+                'digital':product.digital,
+                'get_total':total }
+            
             items.append(item)
 
             if product.digital == False:
@@ -49,7 +52,7 @@ def cartData(request):
         cartItems = order.get_cart_items
     else:
         cookieData = cookieCart(request)
-        cartItems = cookieData['cartItems']
+        cartItems = cookieData['cartItems']#We use try block to prevent items in cart that may have been removed from causing error
         order = cookieData['order']
         items = cookieData['items']
 
@@ -67,14 +70,14 @@ def guestOrder(request, data):
 
     customer, created = Customer.objects.get_or_create(
         email=email,
-    )
+        )
     customer.name = name
     customer.save()
 
     order = Order.objects.create(
         customer=customer,
         complete=False,
-    )
+        )
 
     for item in items:
         product = Product.objects.get(id=item['product']['id'])

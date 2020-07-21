@@ -4,14 +4,14 @@ from PIL import Image
 
 # Create your models here.
 class Customer(models.Model):
-    user = models.OneToOneField(User, null=True, blank=True, on_delete=models.CASCADE)
+    user = models.OneToOneField(User, on_delete=models.CASCADE, null=True)
     name = models.CharField(max_length=155, null=True)
     email = models.EmailField(max_length=155, null=True)
     created_at = models.DateTimeField(auto_now_add=True)
     updated_at = models.DateTimeField(auto_now=True)
 
     def __str__(self):
-        return self.name
+        return self.name or " "
 
 class Product(models.Model):
     name = models.CharField(max_length=155, null=True)
@@ -23,7 +23,7 @@ class Product(models.Model):
     updated_at = models.DateTimeField(auto_now=True)
 
     def __str__(self):
-            return self.name
+        return str(self.name) or " "
 
     @property
     def imageURL(self):
@@ -42,7 +42,7 @@ class Order(models.Model):
     updated_at = models.DateTimeField(auto_now=True)
 
     def __str__(self):
-        return str(self.id)
+        return str(self.id) or " "
 
     @property
     def shipping(self):
@@ -83,7 +83,7 @@ class ShippingAddress(models.Model):
     customer = models.ForeignKey(Customer, on_delete=models.SET_NULL, null=True, blank=True)
     order = models.ForeignKey(Order, on_delete=models.SET_NULL, null=True, blank=True)
     address = models.CharField(max_length=155, null=True)
-    address2 = models.CharField(max_length=155, null=True)
+    address2 = models.CharField(max_length=155, default="optional")
     city = models.CharField(max_length=155, null=True)
     state = models.CharField(max_length=155, null=True)
     zipcode = models.CharField(max_length=155, null=True)
@@ -93,7 +93,7 @@ class ShippingAddress(models.Model):
     updated_at = models.DateTimeField(auto_now=True)
 
     def __str__(self):
-        return self.address
+        return str(self.address) or " "
 
 
 
