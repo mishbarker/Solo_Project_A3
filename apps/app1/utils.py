@@ -52,7 +52,7 @@ def cartData(request):
         cartItems = order.get_cart_items
     else:
         cookieData = cookieCart(request)
-        cartItems = cookieData['cartItems']#We use try block to prevent items in cart that may have been removed from causing error
+        cartItems = cookieData['cartItems']
         order = cookieData['order']
         items = cookieData['items']
 

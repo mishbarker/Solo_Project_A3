@@ -32,9 +32,12 @@
 
           <h1 class="my-4" >Artists for Autistic Adults (A3)</h1>
           <div class="list-group">
-            <a href="#" class="list-group-item">Kim Carr Glass Art</a>
-            <a href="#" class="list-group-item">Lynette Ley Water Colors</a>
-            <a href="#" class="list-group-item">Stephen Joseph Photography</a>
+            <a href="https://www.etsy.com/shop/LoopyGlass?ref=simple-shop-header-name&listing_id=783983548" class="list-group-item">Kim Carr Glass Art</a>
+            <a href="http://www.lynetteleyart.com/about" class="list-group-item">Lynette Ley Water Colors</a>
+            <a href="https://stephenjosephphoto.gallery/bio-info-page" class="list-group-item">Stephen Joseph Photography</a>
+            <a href="https://store.steampowered.com/app/1278040/Storynth/" class="list-group-item">Julia Barker Game Dev</a>
+            <a href="https://www.savagerecords.com/wordpressnew/about/" class="list-group-item">Matt Savage Jazz Piano</a>
+            <a href="https://www.ktvu.com/news/san-jose-man-with-autism-shows-remarkable-gift-on-the-piano" class="list-group-item">ChiLing Wu Piano and More</a>
           </div>
 
         </div>
@@ -72,10 +75,10 @@
             {% for product in products %}
             <div class="col-lg-4 col-md-6 mb-4">
               <div class="card h-100">
-                <a href=""><img class="card-img-top" src="{{product.imageURL}}" alt=""></a>
+                <a href="/show_one/{{product.id}}"><img class="card-img-top" src="{{product.imageURL}}" alt=""></a>
                 <div class="card-body">
                   <h5 class="card-title">
-                    <a href="#">{{product.name}}</a>
+                    <a href="/show_one/{{product.id}}">{{product.name}}</a>
                   </h5>
                   <h5>${{product.price|floatformat:2}}</h5>
                   <p class="card-text">{{product.description}}</p>

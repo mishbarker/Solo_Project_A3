@@ -28,9 +28,12 @@
         <div class="col-lg-3">
           <h1 class="my-4" href="{% url 'store' %}">Artists for Autistic Adults (A3)</h1>
           <div class="list-group">
-            <a href="#" class="list-group-item active">Kim Carr Glass Art</a>
-            <a href="#" class="list-group-item">Lynette Ley Water Colors</a>
-            <a href="#" class="list-group-item">Stephen Joseph Photography</a>
+            <a href="https://www.etsy.com/shop/LoopyGlass?ref=simple-shop-header-name&listing_id=783983548" class="list-group-item">Kim Carr Glass Art</a>
+            <a href="http://www.lynetteleyart.com/about" class="list-group-item">Lynette Ley Water Colors</a>
+            <a href="https://stephenjosephphoto.gallery/bio-info-page" class="list-group-item">Stephen Joseph Photography</a>
+            <a href="https://store.steampowered.com/app/1278040/Storynth/" class="list-group-item">Julia Barker Game Dev</a>
+            <a href="https://www.savagerecords.com/wordpressnew/about/" class="list-group-item">Matt Savage Jazz Piano</a>
+            <a href="https://www.ktvu.com/news/san-jose-man-with-autism-shows-remarkable-gift-on-the-piano" class="list-group-item">ChiLing Wu Piano and More</a>
           </div>
         </div>
         <!-- /.col-lg-3 -->
@@ -38,10 +41,10 @@
         <div class="col-lg-9">
 
           <div class="card mt-4">
-            <img class="card-img-top img-fluid" src="{{item.product.imageURL}}" alt="photo of single product">
+            <div style="flex:2"><img class="card-img-top img-fluid w-75 mx-auto d-block pt-5"src="{{product.imageURL}}" alt="photo of single product"></div>
             <div class="card-body">
-              <h3 class="card-title">{{item.product.name}}</h3>
-              <h4>${{item.product.price|floatformat:2}}</h4>
+              <h3 class="card-title">{{product.name}}</h3>
+              <h4>${{product.price|floatformat:2}}</h4>
               <p class="card-text">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Sapiente dicta fugit fugiat hic aliquam itaque facere, soluta. Totam id dolores, sint aperiam sequi pariatur praesentium animi perspiciatis molestias iure, ducimus!</p>
               
             </div>

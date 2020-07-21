@@ -11,7 +11,7 @@ class Customer(models.Model):
     updated_at = models.DateTimeField(auto_now=True)
 
     def __str__(self):
-        return self.name or " "
+        return self.name
 
 class Product(models.Model):
     name = models.CharField(max_length=155, null=True)
@@ -23,7 +23,7 @@ class Product(models.Model):
     updated_at = models.DateTimeField(auto_now=True)
 
     def __str__(self):
-        return str(self.name) or " "
+        return (self.name)
 
     @property
     def imageURL(self):
@@ -42,7 +42,7 @@ class Order(models.Model):
     updated_at = models.DateTimeField(auto_now=True)
 
     def __str__(self):
-        return str(self.id) or " "
+        return (self.id)
 
     @property
     def shipping(self):
@@ -93,7 +93,7 @@ class ShippingAddress(models.Model):
     updated_at = models.DateTimeField(auto_now=True)
 
     def __str__(self):
-        return str(self.address) or " "
+        return (self.address)
 
 
 
