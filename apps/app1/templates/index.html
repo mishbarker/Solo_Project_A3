@@ -1,29 +1,5 @@
-<!DOCTYPE html>
-<html lang="en">
-
 {% extends 'main.html' %}
 {% load static %}
-
-<head>
-
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <meta name="description" content="">
-  <meta name="author" content="">
-
-  <title>Artists for Autism - A3 - Shopping</title>
-
-  <!-- Bootstrap core CSS -->
-  <link href="{% static 'vendor/bootstrap/css/bootstrap.min.css' %}" rel="stylesheet">
-
-  <!-- Custom styles for this template -->
-  <link href="{% static 'css/shop-homepage.css' %}" rel="stylesheet">
-
-</head>
-
-<body>
-
-  <!-- Page Content -->
 
       {% block content %}
       <div class="row">
@@ -89,10 +65,6 @@
                 
                 <a class="btn btn-success mt-2" href="/show_one/{{product.id}}">View Art</a>
                 
-                  
-                
-				        
-                
               </div>
             </div>
             {% endfor %}
@@ -105,28 +77,3 @@
       </div>
       <!-- /.row -->
       {% endblock content %}
-    
-  <!-- Footer -->
-
-  <footer class="py-5 bg-dark">
-    <div class="container">
-      <p class="m-0 text-center text-white">Copyright &copy; Artists for Autistic Adults (A3) 2020</p>
-    </div>
-
-
-  <!-- Bootstrap core JavaScript -->
-  <script src="vendor/jquery/jquery.min.js"></script>
-  
-  <script src="vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
-  
-  <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
-  
-  <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
-  
-  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js" integrity="sha384-OgVRvuATP1z7JjHLkuOU7Xw704+h835Lr+6QL9UvYjZE3Ipu6Tp75j7Bh/kR0JKI" crossorigin="anonymous"></script>
-
-  <script type="text/javascript" src="{% static 'js/shop_cart.js' %}"></script>
-
-</body>
-
-</html>

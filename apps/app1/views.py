@@ -16,14 +16,15 @@ def index(request):
     return render(request, "index.html", context)
 
 def show_one(request, id):
-    # data = cartData(request)
-    # cartItems = data['cartItems']
-    # items = data['items']
+    data = cartData(request)
+    cartItems = data['cartItems']
+    items = data['items']
 
     context = {
-        "product": Product.objects.get(id=id), }
-        # 'cartItems':cartItems, 
-        # 'items': items}
+        "product": Product.objects.get(id=id), 
+        'cartItems':cartItems, 
+        'items': items,
+    }
     return render(request, "show_one.html", context)
 
 def shop_cart(request):
